@@ -1,0 +1,16 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'Example' do
+#  pod 'WeChatQRCodeScanner', :git => 'git@github.com:0x1306a94/WeChatQRCodeScanner.git'
+
+  pod 'WeChatQRScan', :path => '../'
+#  pod 'OpenCV', :podspec => '../wechat_qrcode/OpenCV.podspec'
+#  pod 'OpenCV2'
+#  target 'WeChatQRScan_Tests' do
+#    inherit! :search_paths
+
+    
+#  end
+end

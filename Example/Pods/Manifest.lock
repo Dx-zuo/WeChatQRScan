@@ -1,0 +1,16 @@
+PODS:
+  - WeChatQRScan (0.1.0)
+
+DEPENDENCIES:
+  - WeChatQRScan (from `../`)
+
+EXTERNAL SOURCES:
+  WeChatQRScan:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  WeChatQRScan: 99a5cce5146a5cfc33391fa63248ac55cc00263a
+
+PODFILE CHECKSUM: bf694ed6143fcdb904d985e99b20d0ffce18895c
+
+COCOAPODS: 1.10.0

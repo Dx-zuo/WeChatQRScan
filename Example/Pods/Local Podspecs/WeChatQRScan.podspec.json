@@ -1,0 +1,37 @@
+{
+  "name": "WeChatQRScan",
+  "version": "0.1.0",
+  "summary": "A short description of WeChatQRScan.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Dx-zuo/WeChatQRScan",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Dx-zuo": "rickzuo@tencent.com"
+  },
+  "source": {
+    "git": "https://github.com/Dx-zuo/WeChatQRScan.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "static_framework": true,
+  "source_files": "WeChatQRScan/Classes/**/*",
+  "vendored_frameworks": "WeChatQRScan/Framework/opencv2.framework",
+  "resource_bundles": {
+    "opencv_3rdparty": [
+      "WeChatQRScan/Assets/*"
+    ]
+  },
+  "module_name": "WeChatQRScan",
+  "header_dir": "WeChatQRScan",
+  "libraries": [
+    "c++"
+  ],
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES"
+  }
+}
