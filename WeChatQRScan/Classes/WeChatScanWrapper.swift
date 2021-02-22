@@ -12,6 +12,7 @@ import opencv2
 public struct WeChatQRScanResult {
     
 }
+
 public class WeChatScanWrapper: NSObject {
     let device = AVCaptureDevice.default(for: AVMediaType.video)
     var input: AVCaptureDeviceInput?
@@ -25,8 +26,18 @@ public class WeChatScanWrapper: NSObject {
     var previewLayer: AVCaptureVideoPreviewLayer?
     var stillImageOutput: AVCaptureStillImageOutput
     
-    lazy var detector: WeChatQRCode = {
-        return WeChatQRCode.init(detector_prototxt_path: "", detector_caffe_model_path: "", super_resolution_prototxt_path: "", super_resolution_caffe_model_path: "")
+    lazy var detector: WeChatQRCode? = {
+        guard let detector_prototxt_path = Bundle.main.path(forResource: "detector", ofType: "prototxt"),
+        let detector_caffe_model_path = Bundle.main.path(forResource: "detector", ofType: "caffemodel"),
+        let super_resolution_prototxt_path = Bundle.main.path(forResource: "sr", ofType: "prototxt"),
+        let super_resolution_caffe_model_path = Bundle.main.path(forResource: "sr", ofType: "caffemodel") else {
+            assert(false, "本地模型文件丢失")
+            return nil
+        }
+        return WeChatQRCode.init(detector_prototxt_path: detector_prototxt_path,
+                                 detector_caffe_model_path: detector_caffe_model_path,
+                                 super_resolution_prototxt_path: super_resolution_prototxt_path,
+                                 super_resolution_caffe_model_path: super_resolution_caffe_model_path)
     }()
     // 是否需要拍照
     var isNeedCaptureImage: Bool
@@ -253,21 +264,7 @@ extension WeChatScanWrapper: AVCaptureVideoDataOutputSampleBufferDelegate {
             // 上一帧处理中
             return
         }
-//        NSAssert(format == kCVPixelFormatType_420YpCbCr8BiPlanarFullRange, @"Only YUV is supported");
-
         isNeedScanResult = false
-//
-//        int w = (int)CVPixelBufferGetWidth(imgBuf);
-//        int h = (int)CVPixelBufferGetHeight(imgBuf);
-//    //    [[Mat alloc] initWithRows:h cols:w type:CV_8UC4 data:imgBufAddr step:0];
-//        cv::Mat mat(h, w, CV_8UC4, imgBufAddr, 0);
-//        cv::Mat transMat;
-//        cv::transpose(mat, transMat);
-//        cv::Mat flipMat;
-//        cv::flip(transMat, flipMat, 1);
-//        CVPixelBufferUnlockBaseAddress(imgBuf, 0);
-//        Mat *flipMatOne;
-//        std::vector<cv::Mat> points;
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
         }
@@ -277,14 +274,32 @@ extension WeChatScanWrapper: AVCaptureVideoDataOutputSampleBufferDelegate {
             return
         }
         let bytesPerRow = CVPixelBufferGetBytesPerRowOfPlane(pixelBuffer, 0)
-//        let byteBuffer = UnsafeMutablePointer<UInt8>(baseAddress)
-        let imgWidth = CVPixelBufferGetWidth(pixelBuffer)
-        let imgHeight = CVPixelBufferGetHeight(pixelBuffer)
-        let data = Data(bytesNoCopy: baseAddress, count: bytesPerRow, deallocator: .free)
-//        let matSource = Mat(rows: imgHeight, cols: imgWidth, type: CvType.CV_8UC4, data: data)
-//        Mat.init(rows: imgHeight, cols: imgWidth, type: 0, data: data, step: 0)
-//        var mat = OpenCVWeChatQRCodePtr.captureBufferBytoMat(sampleBuffer)
-//        let mat = OpenCVBridge
-//        self.detector.detectAndDecode(img: <#T##Mat#>, points: <#T##NSMutableArray#>)
+        let imgWidth = Int32(CVPixelBufferGetWidth(pixelBuffer))
+        let imgHeight = Int32(CVPixelBufferGetHeight(pixelBuffer))
+        let mat = Mat_NewFromBufAddr(imgHeight, imgWidth, CvType.CV_8UC4, baseAddress)
+        /**
+         //    cv::Mat transMat;
+         //    cv::transpose(mat, transMat);
+         //    cv::Mat flipMat;
+         //    cv::flip(transMat, flipMat, 1);
+         //    CVPixelBufferUnlockBaseAddress(imgBuf, 0);
+         //    Mat *flipMatOne;
+         //    std::vector<cv::Mat> points;
+         */
+        var transMat = Mat_New()
+        Mat_Transpose(mat, transMat)
+        var flipMat = Mat_New()
+        Mat_Flip(transMat, flipMat, 1)
+        CVPixelBufferUnlockBaseAddress(pixelBuffer, CVPixelBufferLockFlags(rawValue: 0))
+        
+        let start = CACurrentMediaTime()
+        
+        guard let newFlipMat = flipMat as? opencv2.Mat else {
+            return
+        }
+        var points = [newFlipMat]
+        let res = self.detector?.detectAndDecode(img: newFlipMat, points: &points)
+        
+        print(res)
     }
 }

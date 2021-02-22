@@ -26,6 +26,9 @@
       "WeChatQRScan/Assets/*"
     ]
   },
+  "ios": {
+    "frameworks": "Foundation"
+  },
   "module_name": "WeChatQRScan",
   "header_dir": "WeChatQRScan",
   "libraries": [
@@ -33,5 +36,8 @@
   ],
   "pod_target_xcconfig": {
     "DEFINES_MODULE": "YES"
-  }
+  },
+  "compiler_flags": [
+    "-std=c++1y"
+  ]
 }

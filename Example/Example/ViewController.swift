@@ -1,9 +1,8 @@
 //
 //  ViewController.swift
-//  Example
+//  WeChatQRScan
 //
-//  Created by 乐 y on 2021/2/5.
-//  Copyright © 2021 CocoaPods. All rights reserved.
+//  Created by 乐 y on 2021/2/22.
 //
 
 import UIKit

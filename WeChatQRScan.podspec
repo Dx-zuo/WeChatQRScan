@@ -22,21 +22,22 @@ TODO: Add long description of the pod here.
   s.resource_bundles = {
     'opencv_3rdparty' => ['WeChatQRScan/Assets/*']
   }
-  
+  s.ios.framework  = 'Foundation'
   s.module_name = 'WeChatQRScan'
   s.header_dir = 'WeChatQRScan'
   s.libraries = [
    'c++'
   ]
+  
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES'
   }
-#  s.compiler_flags = [
+  s.compiler_flags = [
 #      '-fno-omit-frame-pointer',
 #      '-fexceptions',
 #      '-Wall',
 #      '-Werror',
-#      '-std=c++1y',
+      '-std=c++1y',
 #      '-fPIC'
-#  ]
+  ]
 end

@@ -10,7 +10,7 @@
 #endif
 #endif
 
-#import "OpenCVBridge-Swift.h"
+#import "OpenCVBridge.h"
 #import "WeChatQRScan.h"
 
 FOUNDATION_EXPORT double WeChatQRScanVersionNumber;

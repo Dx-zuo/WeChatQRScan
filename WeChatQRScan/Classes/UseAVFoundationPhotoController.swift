@@ -78,7 +78,7 @@ open class UseAVFoundationPhotoController: UIViewController,UIGestureRecognizerD
     // 初始化自定义相机UI
     fileprivate func initUI() {
         
-        let preview = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height * 0.7))
+        let preview = UIView(frame: CGRect(x: 0, y: 40, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height * 0.7))
         preview.backgroundColor = UIColor.black
         
         let focusTapGesture = UITapGestureRecognizer(target: self, action: #selector(focusTap))

@@ -8,5 +8,5 @@
 #ifndef WeChatQRScan_h
 #define WeChatQRScan_h
 
-#import "OpenCVBridge-Swift.h"
+#import "OpenCVBridge.h"
 #endif /* WeChatQRScan_h */
