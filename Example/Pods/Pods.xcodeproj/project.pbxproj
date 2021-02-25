@@ -7,91 +7,87 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E283299C5826D964DF75AEDE877B8E7 /* WeChatQRScan-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DE459C6B69BBBCF3072D5C3DE4FDE34 /* WeChatQRScan-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		345AD934181012AF7420E5D4158928D7 /* WeChatQRScan-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A216BCD2D85F63C083A530A7EBC161 /* WeChatQRScan-dummy.m */; };
+		0170F052C1A5ABBE0FC3839E75C6A27D /* WeChatQRCodeDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EC8D68165896EC07DC116ABBEB7A4C /* WeChatQRCodeDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		098AA901660974F693C235C2209D2678 /* WeChatScanWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69125E69ECE3F2C03882332E31F003F /* WeChatScanWrapper.swift */; settings = {COMPILER_FLAGS = "-std=c++1y"; }; };
+		236A98C77D1182A2C9A8B54A5255F0CB /* UseAVFoundationPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42A5D18D7FC18925558B3EB956887FE /* UseAVFoundationPhotoController.swift */; settings = {COMPILER_FLAGS = "-std=c++1y"; }; };
 		4D344BCE744B1C5B46DA1A3CA9749007 /* Pods-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E09B2C7823A0D1CC8850CA739F8BE364 /* Pods-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5C5D222F459AA526B6A45E56A278BBE2 /* opencv_3rdparty in Resources */ = {isa = PBXBuildFile; fileRef = 1A2A0F53647D1B9F436E6BC1D38E1737 /* opencv_3rdparty */; };
-		6ECC119BEE8EBC63E8CB24C61051BAA2 /* WeChatQRScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE9691228D1071F7FDD7305A9CD906A /* WeChatQRScan.swift */; settings = {COMPILER_FLAGS = "-std=c++1y"; }; };
-		798CDDE7630B397E817510F8BF5D5F53 /* WeChatQRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158B1D09A4CC79CC9A14BC2617448A0C /* WeChatQRScanViewController.swift */; settings = {COMPILER_FLAGS = "-std=c++1y"; }; };
-		7DE11CB93EB1261C7D5349D23F598AF7 /* WeChatScanWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405BA6B66B4F4E3C22E8BF4136FC79A2 /* WeChatScanWrapper.swift */; settings = {COMPILER_FLAGS = "-std=c++1y"; }; };
-		9A0C809032E249D9205C67471B20DED3 /* WeChatQRScan.h in Headers */ = {isa = PBXBuildFile; fileRef = 87FC978363297579EA149527AE90AE9C /* WeChatQRScan.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9EF358496FD36C83EDBD0EBAD2160D9B /* UseAVFoundationPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19619B3F5A62C2BF3DC8F2B851B89795 /* UseAVFoundationPhotoController.swift */; settings = {COMPILER_FLAGS = "-std=c++1y"; }; };
-		A3C90B45927DD11F65515BF5160D2C3E /* OpenCVBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = B4A1BBFB77C69635657F4B4786AE2840 /* OpenCVBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE1F25560DBD006DFDE20ED66B8158FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		53675897414487EDCA6D44681CE4BD9D /* OpenCVBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = B163F7F17822F77035CD5B120711CD96 /* OpenCVBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74BFB5D21B587E1413196C551F2A65C0 /* WeChatQRScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7735851811A1C512C6756926F08AA /* WeChatQRScan.swift */; settings = {COMPILER_FLAGS = "-std=c++1y"; }; };
+		75DE22EAC0DB53AD8B51C31F20EE9ADE /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73310010FF64068D01FAD9D59CC5B26 /* Helper.swift */; settings = {COMPILER_FLAGS = "-std=c++1y"; }; };
+		AA01A807888A5C7A405DBB347C1DD93C /* OpenCVBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8B48EFEC69473BD677B076251CFD98E7 /* OpenCVBridge.cpp */; settings = {COMPILER_FLAGS = "-std=c++1y"; }; };
+		AAF0AC7A90FB3CF58BDD127FB06075CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		C3122C6789EF82356F5629EC7077C92C /* opencv_3rdparty in Resources */ = {isa = PBXBuildFile; fileRef = 32A520FD56400FF15AAE34DCFF0F763B /* opencv_3rdparty */; };
+		DBF10BC0C8C8363F4F7E28C13FD164E7 /* WeChatQRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0BDE0C9FD8D41539B862EB7CD1D9E6 /* WeChatQRScanViewController.swift */; settings = {COMPILER_FLAGS = "-std=c++1y"; }; };
+		E2B1332833A1D7C1E0DF11D9C55F7C77 /* WeChatQRScan-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A97306B10A6AC1F8D094142AA80040E2 /* WeChatQRScan-dummy.m */; };
+		E5BE1F47E8F7A754EC0ED94208947A21 /* WeChatQRScan-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B87270AD650049FF952DE51F3E6AFA63 /* WeChatQRScan-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8AE1A435CBB560A103E9F3CAF279858 /* WeChatQRScan.h in Headers */ = {isa = PBXBuildFile; fileRef = 390B4054103DDCFA800F107B7753E1BE /* WeChatQRScan.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECA18EC94F74E37F01D079EC1A669F89 /* WeChatQRCodeDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = A637CA8AF9ABEE012F55C2D5A670934F /* WeChatQRCodeDetector.mm */; settings = {COMPILER_FLAGS = "-std=c++1y"; }; };
 		EFF2CA8E66BD8C11E25969BFF8005341 /* Pods-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE3E54532C3D9884A04A5E4489AB6B /* Pods-Example-dummy.m */; };
-		FB9CBBCACB4D7B7E13BD8FD97BD53EEB /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA476FB5920626C6D072AEB4F746FC0 /* Helper.swift */; settings = {COMPILER_FLAGS = "-std=c++1y"; }; };
-		FC7B5D3A454D9FA2719E4A6BB0BA4E9A /* OpenCVBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8B64537DD50B851E357FB01A4E1B10D /* OpenCVBridge.cpp */; settings = {COMPILER_FLAGS = "-std=c++1y"; }; };
 		FF1CF25DC9303050FE76F52CAF7874CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7A0595455DB49EACB2025C967A2662F8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BE5C5358C325CFE30FDE79B07088632B;
-			remoteInfo = "WeChatQRScan-opencv_3rdparty";
-		};
-		BFED1CC24F054247BBDD1F45C8F5CA14 /* PBXContainerItemProxy */ = {
+		6736C8FE98B2480678418421E06E913E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BB7EEFCF45CFEADE178878FC7B3BEBE6;
 			remoteInfo = WeChatQRScan;
 		};
+		7E4C7DA90985FB36848C0B0943C40718 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50EEDCD718BADB77DC4C87716E3BE0CE;
+			remoteInfo = "WeChatQRScan-WeChatQRScan";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01C502A5CE6A0FBC49520699C614A5A3 /* WeChatQRScan-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WeChatQRScan-prefix.pch"; sourceTree = "<group>"; };
-		06E4DB6ABB5C03536B4A038EC0125DC5 /* WeChatQRScan.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WeChatQRScan.modulemap; sourceTree = "<group>"; };
-		0EC4FAFFE697E39D69921DF7090A0B39 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		10A216BCD2D85F63C083A530A7EBC161 /* WeChatQRScan-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WeChatQRScan-dummy.m"; sourceTree = "<group>"; };
-		158B1D09A4CC79CC9A14BC2617448A0C /* WeChatQRScanViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WeChatQRScanViewController.swift; path = WeChatQRScan/Classes/WeChatQRScanViewController.swift; sourceTree = "<group>"; };
-		19619B3F5A62C2BF3DC8F2B851B89795 /* UseAVFoundationPhotoController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UseAVFoundationPhotoController.swift; path = WeChatQRScan/Classes/UseAVFoundationPhotoController.swift; sourceTree = "<group>"; };
-		1A2A0F53647D1B9F436E6BC1D38E1737 /* opencv_3rdparty */ = {isa = PBXFileReference; includeInIndex = 1; name = opencv_3rdparty; path = WeChatQRScan/Assets/opencv_3rdparty; sourceTree = "<group>"; };
+		17929D6DCF4220CCC900283345BC6B64 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		1C20C11E034DB04B757B9D6E0CEFBD0F /* WeChatQRScan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WeChatQRScan.release.xcconfig; sourceTree = "<group>"; };
 		1E3040E89BF858EAB95AE6668DC9E458 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		1F667CC0E19EAF34E5A4119E2121F585 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Example.framework; path = "Pods-Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FFB2CEC3F5945DB2755BF9740466557 /* WeChatQRScan-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WeChatQRScan-Info.plist"; sourceTree = "<group>"; };
-		3083AF447859A571C043671BC8E06D43 /* WeChatQRScan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WeChatQRScan.debug.xcconfig; sourceTree = "<group>"; };
 		30AE584AD81F8EE31D36BC1B56D75016 /* Pods-Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-Info.plist"; sourceTree = "<group>"; };
+		32A520FD56400FF15AAE34DCFF0F763B /* opencv_3rdparty */ = {isa = PBXFileReference; includeInIndex = 1; name = opencv_3rdparty; path = WeChatQRScan/Assets/opencv_3rdparty; sourceTree = "<group>"; };
 		37BCA58A48DCED5B67CFBD435F7D8257 /* Pods-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		405BA6B66B4F4E3C22E8BF4136FC79A2 /* WeChatScanWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WeChatScanWrapper.swift; path = WeChatQRScan/Classes/WeChatScanWrapper.swift; sourceTree = "<group>"; };
-		4B6C46DB13B1B7B96ADCD7BFDF8D9477 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		4DE459C6B69BBBCF3072D5C3DE4FDE34 /* WeChatQRScan-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WeChatQRScan-umbrella.h"; sourceTree = "<group>"; };
+		390B4054103DDCFA800F107B7753E1BE /* WeChatQRScan.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WeChatQRScan.h; path = WeChatQRScan/Classes/WeChatQRScan.h; sourceTree = "<group>"; };
 		4FFE3E54532C3D9884A04A5E4489AB6B /* Pods-Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Example-dummy.m"; sourceTree = "<group>"; };
+		59CA4CB9B92FBA8F7850F9887181FB06 /* WeChatQRScan.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WeChatQRScan.modulemap; sourceTree = "<group>"; };
+		5BB18D0A3EB876A4F7377A4DBA926256 /* WeChatQRScan-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WeChatQRScan-Info.plist"; sourceTree = "<group>"; };
 		6B36D8C71AE95C2DF0010FDCA5E8D665 /* WeChatQRScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WeChatQRScan.framework; path = WeChatQRScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72D418B07135573BB0CF3D5EE55BCB35 /* WeChatQRScan.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WeChatQRScan.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6B7B1CC99C734BB4BB6F75A19B8C2756 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		6BE7735851811A1C512C6756926F08AA /* WeChatQRScan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WeChatQRScan.swift; path = WeChatQRScan/Classes/WeChatQRScan.swift; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		746F4BBD5C000813E29D6AA7FE92A1AB /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = WeChatQRScan/Framework/opencv2.framework; sourceTree = "<group>"; };
 		7BD1FE71A430758768FE079990132C21 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7D7C3E3D7869B75A94114024FA2364CA /* Pods-Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Example.modulemap"; sourceTree = "<group>"; };
-		87FC978363297579EA149527AE90AE9C /* WeChatQRScan.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WeChatQRScan.h; path = WeChatQRScan/Classes/WeChatQRScan.h; sourceTree = "<group>"; };
+		7FF5A3B299D938F5963092418A856303 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = WeChatQRScan/Framework/opencv2.framework; sourceTree = "<group>"; };
+		8B48EFEC69473BD677B076251CFD98E7 /* OpenCVBridge.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = OpenCVBridge.cpp; path = WeChatQRScan/Classes/OpenCVBridge.cpp; sourceTree = "<group>"; };
+		8BC9A9136FFE9522488248E37BEB75CE /* WeChatQRScan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WeChatQRScan.debug.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9DE5D12FEB2F73DFC90DF0BEA91839D1 /* opencv_3rdparty.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = opencv_3rdparty.bundle; path = "WeChatQRScan-opencv_3rdparty.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1EC8D68165896EC07DC116ABBEB7A4C /* WeChatQRCodeDetector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WeChatQRCodeDetector.h; path = WeChatQRScan/Classes/WeChatQRCodeDetector.h; sourceTree = "<group>"; };
+		A637CA8AF9ABEE012F55C2D5A670934F /* WeChatQRCodeDetector.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = WeChatQRCodeDetector.mm; path = WeChatQRScan/Classes/WeChatQRCodeDetector.mm; sourceTree = "<group>"; };
+		A97306B10A6AC1F8D094142AA80040E2 /* WeChatQRScan-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WeChatQRScan-dummy.m"; sourceTree = "<group>"; };
+		AC196020BAC212DABD0BE03292CB464C /* WeChatQRScan.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WeChatQRScan.bundle; path = "WeChatQRScan-WeChatQRScan.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B163F7F17822F77035CD5B120711CD96 /* OpenCVBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenCVBridge.h; path = WeChatQRScan/Classes/OpenCVBridge.h; sourceTree = "<group>"; };
+		B42A5D18D7FC18925558B3EB956887FE /* UseAVFoundationPhotoController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UseAVFoundationPhotoController.swift; path = WeChatQRScan/Classes/UseAVFoundationPhotoController.swift; sourceTree = "<group>"; };
 		B46D12E32F05C4C695851C666EC9DCF8 /* Pods-Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-resources.sh"; sourceTree = "<group>"; };
-		B4A1BBFB77C69635657F4B4786AE2840 /* OpenCVBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenCVBridge.h; path = WeChatQRScan/Classes/OpenCVBridge.h; sourceTree = "<group>"; };
-		B8B64537DD50B851E357FB01A4E1B10D /* OpenCVBridge.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = OpenCVBridge.cpp; path = WeChatQRScan/Classes/OpenCVBridge.cpp; sourceTree = "<group>"; };
-		C1255257ADBA52A5B26C8B77EFA5273F /* WeChatQRScan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WeChatQRScan.release.xcconfig; sourceTree = "<group>"; };
-		CEA476FB5920626C6D072AEB4F746FC0 /* Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = WeChatQRScan/Classes/Helper.swift; sourceTree = "<group>"; };
+		B87270AD650049FF952DE51F3E6AFA63 /* WeChatQRScan-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WeChatQRScan-umbrella.h"; sourceTree = "<group>"; };
+		C69125E69ECE3F2C03882332E31F003F /* WeChatScanWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WeChatScanWrapper.swift; path = WeChatQRScan/Classes/WeChatScanWrapper.swift; sourceTree = "<group>"; };
+		C73310010FF64068D01FAD9D59CC5B26 /* Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = WeChatQRScan/Classes/Helper.swift; sourceTree = "<group>"; };
+		CB0BDE0C9FD8D41539B862EB7CD1D9E6 /* WeChatQRScanViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WeChatQRScanViewController.swift; path = WeChatQRScan/Classes/WeChatQRScanViewController.swift; sourceTree = "<group>"; };
+		CECB2CB052957C05290B60034AC04383 /* WeChatQRScan.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WeChatQRScan.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D8B960460DA1F22F24F96DBD1E108BCC /* Pods-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		E09B2C7823A0D1CC8850CA739F8BE364 /* Pods-Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example-umbrella.h"; sourceTree = "<group>"; };
-		FBE9691228D1071F7FDD7305A9CD906A /* WeChatQRScan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WeChatQRScan.swift; path = WeChatQRScan/Classes/WeChatQRScan.swift; sourceTree = "<group>"; };
-		FF1D028E8C5B81A93C9EA1639DAC873F /* ResourceBundle-opencv_3rdparty-WeChatQRScan-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-opencv_3rdparty-WeChatQRScan-Info.plist"; sourceTree = "<group>"; };
+		E2504A9A021DCFA9B89B476A21C68589 /* WeChatQRScan-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WeChatQRScan-prefix.pch"; sourceTree = "<group>"; };
+		EEFD5ABCCE880A4A32D9A1FB9BB11BB2 /* ResourceBundle-WeChatQRScan-WeChatQRScan-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-WeChatQRScan-WeChatQRScan-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2264B5C610184D4E0F3B725D9A578F9E /* Frameworks */ = {
+		87F44EAF0DA2C4893B11821D40E022B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6D04AD86A2A16E52180315C8D8425679 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AE1F25560DBD006DFDE20ED66B8158FF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,25 +99,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FEC35BB09ECC83F08DEB7C04EADD8FE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAF0AC7A90FB3CF58BDD127FB06075CD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3032BA76399499445A572B1FA698918F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				FF1D028E8C5B81A93C9EA1639DAC873F /* ResourceBundle-opencv_3rdparty-WeChatQRScan-Info.plist */,
-				06E4DB6ABB5C03536B4A038EC0125DC5 /* WeChatQRScan.modulemap */,
-				10A216BCD2D85F63C083A530A7EBC161 /* WeChatQRScan-dummy.m */,
-				1FFB2CEC3F5945DB2755BF9740466557 /* WeChatQRScan-Info.plist */,
-				01C502A5CE6A0FBC49520699C614A5A3 /* WeChatQRScan-prefix.pch */,
-				4DE459C6B69BBBCF3072D5C3DE4FDE34 /* WeChatQRScan-umbrella.h */,
-				3083AF447859A571C043671BC8E06D43 /* WeChatQRScan.debug.xcconfig */,
-				C1255257ADBA52A5B26C8B77EFA5273F /* WeChatQRScan.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/WeChatQRScan";
-			sourceTree = "<group>";
-		};
 		433C4ACAFCCB9989FB913F868EE0CD4C /* Pods-Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,12 +127,24 @@
 			path = "Target Support Files/Pods-Example";
 			sourceTree = "<group>";
 		};
-		43CCE7D302FFBFC338A70C0F39937F67 /* Frameworks */ = {
+		435D950F61C772B682963CC595B4992F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				746F4BBD5C000813E29D6AA7FE92A1AB /* opencv2.framework */,
+				1F667CC0E19EAF34E5A4119E2121F585 /* Pods_Example.framework */,
+				AC196020BAC212DABD0BE03292CB464C /* WeChatQRScan.bundle */,
+				6B36D8C71AE95C2DF0010FDCA5E8D665 /* WeChatQRScan.framework */,
 			);
-			name = Frameworks;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		489F18D81EEFF2CB6F4B5E3793B9730E /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				6B7B1CC99C734BB4BB6F75A19B8C2756 /* LICENSE */,
+				17929D6DCF4220CCC900283345BC6B64 /* README.md */,
+				CECB2CB052957C05290B60034AC04383 /* WeChatQRScan.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -155,32 +155,58 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		882C6EB2768746D1E2DB88C85F65B86B /* Pod */ = {
+		72AED03190B06CD28314F597651DEE3F /* WeChatQRScan */ = {
 			isa = PBXGroup;
 			children = (
-				4B6C46DB13B1B7B96ADCD7BFDF8D9477 /* LICENSE */,
-				0EC4FAFFE697E39D69921DF7090A0B39 /* README.md */,
-				72D418B07135573BB0CF3D5EE55BCB35 /* WeChatQRScan.podspec */,
+				C73310010FF64068D01FAD9D59CC5B26 /* Helper.swift */,
+				32A520FD56400FF15AAE34DCFF0F763B /* opencv_3rdparty */,
+				8B48EFEC69473BD677B076251CFD98E7 /* OpenCVBridge.cpp */,
+				B163F7F17822F77035CD5B120711CD96 /* OpenCVBridge.h */,
+				B42A5D18D7FC18925558B3EB956887FE /* UseAVFoundationPhotoController.swift */,
+				A1EC8D68165896EC07DC116ABBEB7A4C /* WeChatQRCodeDetector.h */,
+				A637CA8AF9ABEE012F55C2D5A670934F /* WeChatQRCodeDetector.mm */,
+				390B4054103DDCFA800F107B7753E1BE /* WeChatQRScan.h */,
+				6BE7735851811A1C512C6756926F08AA /* WeChatQRScan.swift */,
+				CB0BDE0C9FD8D41539B862EB7CD1D9E6 /* WeChatQRScanViewController.swift */,
+				C69125E69ECE3F2C03882332E31F003F /* WeChatScanWrapper.swift */,
+				B0A7319A71886CB2D2A8A687BE137202 /* Frameworks */,
+				489F18D81EEFF2CB6F4B5E3793B9730E /* Pod */,
+				A0E8B68F0DB5950E9EED00F276D9C670 /* Support Files */,
 			);
-			name = Pod;
+			name = WeChatQRScan;
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		AD0F78F8A985E137A0B179BF55E49484 /* Development Pods */ = {
+		9769666B4EE9DAA8C71789C367CB27DE /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F02B5A62B1DD8AEE1A0AEF6FA003EFD8 /* WeChatQRScan */,
+				72AED03190B06CD28314F597651DEE3F /* WeChatQRScan */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		B150E81FBDDAAD6215FA27BBFCF7C3BA /* Products */ = {
+		A0E8B68F0DB5950E9EED00F276D9C670 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9DE5D12FEB2F73DFC90DF0BEA91839D1 /* opencv_3rdparty.bundle */,
-				1F667CC0E19EAF34E5A4119E2121F585 /* Pods_Example.framework */,
-				6B36D8C71AE95C2DF0010FDCA5E8D665 /* WeChatQRScan.framework */,
+				EEFD5ABCCE880A4A32D9A1FB9BB11BB2 /* ResourceBundle-WeChatQRScan-WeChatQRScan-Info.plist */,
+				59CA4CB9B92FBA8F7850F9887181FB06 /* WeChatQRScan.modulemap */,
+				A97306B10A6AC1F8D094142AA80040E2 /* WeChatQRScan-dummy.m */,
+				5BB18D0A3EB876A4F7377A4DBA926256 /* WeChatQRScan-Info.plist */,
+				E2504A9A021DCFA9B89B476A21C68589 /* WeChatQRScan-prefix.pch */,
+				B87270AD650049FF952DE51F3E6AFA63 /* WeChatQRScan-umbrella.h */,
+				8BC9A9136FFE9522488248E37BEB75CE /* WeChatQRScan.debug.xcconfig */,
+				1C20C11E034DB04B757B9D6E0CEFBD0F /* WeChatQRScan.release.xcconfig */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/WeChatQRScan";
+			sourceTree = "<group>";
+		};
+		B0A7319A71886CB2D2A8A687BE137202 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FF5A3B299D938F5963092418A856303 /* opencv2.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CE2E825F08D3AD0FD76E6D78D7512ED0 /* Targets Support Files */ = {
@@ -195,9 +221,9 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				AD0F78F8A985E137A0B179BF55E49484 /* Development Pods */,
+				9769666B4EE9DAA8C71789C367CB27DE /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				B150E81FBDDAAD6215FA27BBFCF7C3BA /* Products */,
+				435D950F61C772B682963CC595B4992F /* Products */,
 				CE2E825F08D3AD0FD76E6D78D7512ED0 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -208,26 +234,6 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F02B5A62B1DD8AEE1A0AEF6FA003EFD8 /* WeChatQRScan */ = {
-			isa = PBXGroup;
-			children = (
-				CEA476FB5920626C6D072AEB4F746FC0 /* Helper.swift */,
-				1A2A0F53647D1B9F436E6BC1D38E1737 /* opencv_3rdparty */,
-				B8B64537DD50B851E357FB01A4E1B10D /* OpenCVBridge.cpp */,
-				B4A1BBFB77C69635657F4B4786AE2840 /* OpenCVBridge.h */,
-				19619B3F5A62C2BF3DC8F2B851B89795 /* UseAVFoundationPhotoController.swift */,
-				87FC978363297579EA149527AE90AE9C /* WeChatQRScan.h */,
-				FBE9691228D1071F7FDD7305A9CD906A /* WeChatQRScan.swift */,
-				158B1D09A4CC79CC9A14BC2617448A0C /* WeChatQRScanViewController.swift */,
-				405BA6B66B4F4E3C22E8BF4136FC79A2 /* WeChatScanWrapper.swift */,
-				43CCE7D302FFBFC338A70C0F39937F67 /* Frameworks */,
-				882C6EB2768746D1E2DB88C85F65B86B /* Pod */,
-				3032BA76399499445A572B1FA698918F /* Support Files */,
-			);
-			name = WeChatQRScan;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,13 +247,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		31AEFB4891D25FA5D50A47936BA9037A /* Headers */ = {
+		38C516BC50DBE71EA9B165024256D0A1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3C90B45927DD11F65515BF5160D2C3E /* OpenCVBridge.h in Headers */,
-				2E283299C5826D964DF75AEDE877B8E7 /* WeChatQRScan-umbrella.h in Headers */,
-				9A0C809032E249D9205C67471B20DED3 /* WeChatQRScan.h in Headers */,
+				53675897414487EDCA6D44681CE4BD9D /* OpenCVBridge.h in Headers */,
+				0170F052C1A5ABBE0FC3839E75C6A27D /* WeChatQRCodeDetector.h in Headers */,
+				E5BE1F47E8F7A754EC0ED94208947A21 /* WeChatQRScan-umbrella.h in Headers */,
+				E8AE1A435CBB560A103E9F3CAF279858 /* WeChatQRScan.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,48 +273,48 @@
 			buildRules = (
 			);
 			dependencies = (
-				B7B74747C608796E977EF907F9ED5D70 /* PBXTargetDependency */,
+				BCD9A10A72054CA0687C756A97304FE2 /* PBXTargetDependency */,
 			);
 			name = "Pods-Example";
 			productName = "Pods-Example";
 			productReference = 1F667CC0E19EAF34E5A4119E2121F585 /* Pods_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BB7EEFCF45CFEADE178878FC7B3BEBE6 /* WeChatQRScan */ = {
+		50EEDCD718BADB77DC4C87716E3BE0CE /* WeChatQRScan-WeChatQRScan */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 40A653F7E60CD15710917B369E28A201 /* Build configuration list for PBXNativeTarget "WeChatQRScan" */;
+			buildConfigurationList = F9A35738913A3D01F56FAABE0D03E44A /* Build configuration list for PBXNativeTarget "WeChatQRScan-WeChatQRScan" */;
 			buildPhases = (
-				31AEFB4891D25FA5D50A47936BA9037A /* Headers */,
-				07313D8C765C77A0AC48EA0B16391844 /* Sources */,
-				6D04AD86A2A16E52180315C8D8425679 /* Frameworks */,
-				1585B7B038E6CAA31E7CB48B514EA233 /* Resources */,
+				7C5768FC1AD6DB589A78C352914EE90B /* Sources */,
+				87F44EAF0DA2C4893B11821D40E022B6 /* Frameworks */,
+				55396CB72DDDDD1C426C9D0E05D88DD5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B69CF619E9BB955F55031B1265D3E326 /* PBXTargetDependency */,
+			);
+			name = "WeChatQRScan-WeChatQRScan";
+			productName = "WeChatQRScan-WeChatQRScan";
+			productReference = AC196020BAC212DABD0BE03292CB464C /* WeChatQRScan.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		BB7EEFCF45CFEADE178878FC7B3BEBE6 /* WeChatQRScan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3D687F7BBA049DF65A5F575C60AD472 /* Build configuration list for PBXNativeTarget "WeChatQRScan" */;
+			buildPhases = (
+				38C516BC50DBE71EA9B165024256D0A1 /* Headers */,
+				F3131226EA212105E8BCF81B29907987 /* Sources */,
+				FEC35BB09ECC83F08DEB7C04EADD8FE2 /* Frameworks */,
+				7D92D37C868DC8DF9D8D1CA2AA9A8E0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A19FFCCDAB6D25D5A0E003F33FB8FB43 /* PBXTargetDependency */,
 			);
 			name = WeChatQRScan;
 			productName = WeChatQRScan;
 			productReference = 6B36D8C71AE95C2DF0010FDCA5E8D665 /* WeChatQRScan.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		BE5C5358C325CFE30FDE79B07088632B /* WeChatQRScan-opencv_3rdparty */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6A17185E3E9631D18043AAB420E04E93 /* Build configuration list for PBXNativeTarget "WeChatQRScan-opencv_3rdparty" */;
-			buildPhases = (
-				02F1916FFFAE5343C17F056DA41FF472 /* Sources */,
-				2264B5C610184D4E0F3B725D9A578F9E /* Frameworks */,
-				8BB52D420813DE1C97EFE654D2A054B5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "WeChatQRScan-opencv_3rdparty";
-			productName = "WeChatQRScan-opencv_3rdparty";
-			productReference = 9DE5D12FEB2F73DFC90DF0BEA91839D1 /* opencv_3rdparty.bundle */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -327,30 +334,30 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = B150E81FBDDAAD6215FA27BBFCF7C3BA /* Products */;
+			productRefGroup = 435D950F61C772B682963CC595B4992F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				0AEE99A309977BD12A049FF48AF9BA4B /* Pods-Example */,
 				BB7EEFCF45CFEADE178878FC7B3BEBE6 /* WeChatQRScan */,
-				BE5C5358C325CFE30FDE79B07088632B /* WeChatQRScan-opencv_3rdparty */,
+				50EEDCD718BADB77DC4C87716E3BE0CE /* WeChatQRScan-WeChatQRScan */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1585B7B038E6CAA31E7CB48B514EA233 /* Resources */ = {
+		55396CB72DDDDD1C426C9D0E05D88DD5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3122C6789EF82356F5629EC7077C92C /* opencv_3rdparty in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BB52D420813DE1C97EFE654D2A054B5 /* Resources */ = {
+		7D92D37C868DC8DF9D8D1CA2AA9A8E0F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C5D222F459AA526B6A45E56A278BBE2 /* opencv_3rdparty in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,24 +371,10 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		02F1916FFFAE5343C17F056DA41FF472 /* Sources */ = {
+		7C5768FC1AD6DB589A78C352914EE90B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07313D8C765C77A0AC48EA0B16391844 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FB9CBBCACB4D7B7E13BD8FD97BD53EEB /* Helper.swift in Sources */,
-				FC7B5D3A454D9FA2719E4A6BB0BA4E9A /* OpenCVBridge.cpp in Sources */,
-				9EF358496FD36C83EDBD0EBAD2160D9B /* UseAVFoundationPhotoController.swift in Sources */,
-				345AD934181012AF7420E5D4158928D7 /* WeChatQRScan-dummy.m in Sources */,
-				6ECC119BEE8EBC63E8CB24C61051BAA2 /* WeChatQRScan.swift in Sources */,
-				798CDDE7630B397E817510F8BF5D5F53 /* WeChatQRScanViewController.swift in Sources */,
-				7DE11CB93EB1261C7D5349D23F598AF7 /* WeChatScanWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,59 +386,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F3131226EA212105E8BCF81B29907987 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75DE22EAC0DB53AD8B51C31F20EE9ADE /* Helper.swift in Sources */,
+				AA01A807888A5C7A405DBB347C1DD93C /* OpenCVBridge.cpp in Sources */,
+				236A98C77D1182A2C9A8B54A5255F0CB /* UseAVFoundationPhotoController.swift in Sources */,
+				ECA18EC94F74E37F01D079EC1A669F89 /* WeChatQRCodeDetector.mm in Sources */,
+				E2B1332833A1D7C1E0DF11D9C55F7C77 /* WeChatQRScan-dummy.m in Sources */,
+				74BFB5D21B587E1413196C551F2A65C0 /* WeChatQRScan.swift in Sources */,
+				DBF10BC0C8C8363F4F7E28C13FD164E7 /* WeChatQRScanViewController.swift in Sources */,
+				098AA901660974F693C235C2209D2678 /* WeChatScanWrapper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B69CF619E9BB955F55031B1265D3E326 /* PBXTargetDependency */ = {
+		A19FFCCDAB6D25D5A0E003F33FB8FB43 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "WeChatQRScan-opencv_3rdparty";
-			target = BE5C5358C325CFE30FDE79B07088632B /* WeChatQRScan-opencv_3rdparty */;
-			targetProxy = 7A0595455DB49EACB2025C967A2662F8 /* PBXContainerItemProxy */;
+			name = "WeChatQRScan-WeChatQRScan";
+			target = 50EEDCD718BADB77DC4C87716E3BE0CE /* WeChatQRScan-WeChatQRScan */;
+			targetProxy = 7E4C7DA90985FB36848C0B0943C40718 /* PBXContainerItemProxy */;
 		};
-		B7B74747C608796E977EF907F9ED5D70 /* PBXTargetDependency */ = {
+		BCD9A10A72054CA0687C756A97304FE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = WeChatQRScan;
 			target = BB7EEFCF45CFEADE178878FC7B3BEBE6 /* WeChatQRScan */;
-			targetProxy = BFED1CC24F054247BBDD1F45C8F5CA14 /* PBXContainerItemProxy */;
+			targetProxy = 6736C8FE98B2480678418421E06E913E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0C071A135CF54AC9889FFD493FC12A49 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1255257ADBA52A5B26C8B77EFA5273F /* WeChatQRScan.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/WeChatQRScan/WeChatQRScan-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/WeChatQRScan/WeChatQRScan-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/WeChatQRScan/WeChatQRScan.modulemap";
-				PRODUCT_MODULE_NAME = WeChatQRScan;
-				PRODUCT_NAME = WeChatQRScan;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		1AE4D65FB651CA8629B1F77B61ACFCFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1E3040E89BF858EAB95AE6668DC9E458 /* Pods-Example.release.xcconfig */;
@@ -480,22 +453,6 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		1DBF4568D9394729E322751F58517018 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1255257ADBA52A5B26C8B77EFA5273F /* WeChatQRScan.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/WeChatQRScan";
-				IBSC_MODULE = WeChatQRScan;
-				INFOPLIST_FILE = "Target Support Files/WeChatQRScan/ResourceBundle-opencv_3rdparty-WeChatQRScan-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = opencv_3rdparty;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -565,6 +522,56 @@
 			};
 			name = Debug;
 		};
+		642760F8C3DB451B3AE3CAE467AD6292 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BC9A9136FFE9522488248E37BEB75CE /* WeChatQRScan.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WeChatQRScan/WeChatQRScan-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WeChatQRScan/WeChatQRScan-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/WeChatQRScan/WeChatQRScan.modulemap";
+				PRODUCT_MODULE_NAME = WeChatQRScan;
+				PRODUCT_NAME = WeChatQRScan;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		90A34A13B5D6A5C8AECAD1E09FA4AD74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BC9A9136FFE9522488248E37BEB75CE /* WeChatQRScan.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/WeChatQRScan";
+				IBSC_MODULE = WeChatQRScan;
+				INFOPLIST_FILE = "Target Support Files/WeChatQRScan/ResourceBundle-WeChatQRScan-WeChatQRScan-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = WeChatQRScan;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		B2D5062E7654CE08BC631FCFBED72E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7BD1FE71A430758768FE079990132C21 /* Pods-Example.debug.xcconfig */;
@@ -600,6 +607,22 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		C1809B683D38749C2FB314FA1AA4F86C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C20C11E034DB04B757B9D6E0CEFBD0F /* WeChatQRScan.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/WeChatQRScan";
+				IBSC_MODULE = WeChatQRScan;
+				INFOPLIST_FILE = "Target Support Files/WeChatQRScan/ResourceBundle-WeChatQRScan-WeChatQRScan-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = WeChatQRScan;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -663,9 +686,9 @@
 			};
 			name = Release;
 		};
-		D2456B1AAD86A08AFD5B4F735C2E67CF /* Debug */ = {
+		F5167E8B6672085BD58FCCE208787B38 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3083AF447859A571C043671BC8E06D43 /* WeChatQRScan.debug.xcconfig */;
+			baseConfigurationReference = 1C20C11E034DB04B757B9D6E0CEFBD0F /* WeChatQRScan.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -692,39 +715,15 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
-		};
-		F385D6EAA6B44927D4559186CA8D373E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3083AF447859A571C043671BC8E06D43 /* WeChatQRScan.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/WeChatQRScan";
-				IBSC_MODULE = WeChatQRScan;
-				INFOPLIST_FILE = "Target Support Files/WeChatQRScan/ResourceBundle-opencv_3rdparty-WeChatQRScan-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = opencv_3rdparty;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		40A653F7E60CD15710917B369E28A201 /* Build configuration list for PBXNativeTarget "WeChatQRScan" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D2456B1AAD86A08AFD5B4F735C2E67CF /* Debug */,
-				0C071A135CF54AC9889FFD493FC12A49 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -743,11 +742,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A17185E3E9631D18043AAB420E04E93 /* Build configuration list for PBXNativeTarget "WeChatQRScan-opencv_3rdparty" */ = {
+		B3D687F7BBA049DF65A5F575C60AD472 /* Build configuration list for PBXNativeTarget "WeChatQRScan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F385D6EAA6B44927D4559186CA8D373E /* Debug */,
-				1DBF4568D9394729E322751F58517018 /* Release */,
+				642760F8C3DB451B3AE3CAE467AD6292 /* Debug */,
+				F5167E8B6672085BD58FCCE208787B38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9A35738913A3D01F56FAABE0D03E44A /* Build configuration list for PBXNativeTarget "WeChatQRScan-WeChatQRScan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90A34A13B5D6A5C8AECAD1E09FA4AD74 /* Debug */,
+				C1809B683D38749C2FB314FA1AA4F86C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

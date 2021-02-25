@@ -22,7 +22,7 @@
   "source_files": "WeChatQRScan/Classes/**/*",
   "vendored_frameworks": "WeChatQRScan/Framework/opencv2.framework",
   "resource_bundles": {
-    "opencv_3rdparty": [
+    "WeChatQRScan": [
       "WeChatQRScan/Assets/*"
     ]
   },

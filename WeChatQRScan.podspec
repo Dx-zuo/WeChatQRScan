@@ -20,7 +20,7 @@ TODO: Add long description of the pod here.
   s.vendored_frameworks = 'WeChatQRScan/Framework/opencv2.framework'
 
   s.resource_bundles = {
-    'opencv_3rdparty' => ['WeChatQRScan/Assets/*']
+    'WeChatQRScan' => ['WeChatQRScan/Assets/*']
   }
   s.ios.framework  = 'Foundation'
   s.module_name = 'WeChatQRScan'

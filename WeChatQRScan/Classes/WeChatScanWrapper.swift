@@ -8,33 +8,60 @@
 import Foundation
 import AVFoundation
 import opencv2
+import CoreGraphics
 
 public struct WeChatQRScanResult {
-    
+    var rect: CGRect
+    var text: String
+    // 原始数据
+    var mat: opencv2.Mat?
+}
+
+protocol WeChatScanWrapperDelegate {
+    // Required
+    func WeChatScanWrapper(_ wrapper: WeChatScanWrapper, didFailure error: Error)
+    func WeChatScanWrapper(_ wrapper: WeChatScanWrapper, didSuccess code: String)
+    // Optional
+    func WeChatScanWrapper(_ wrapper: WeChatScanWrapper, didChangeTorchActive isOn: Bool)
 }
 
 public class WeChatScanWrapper: NSObject {
-    let device = AVCaptureDevice.default(for: AVMediaType.video)
+    
+    let delegate: WeChatScanWrapperDelegate?
+    
     var input: AVCaptureDeviceInput?
+    
     lazy var output: AVCaptureVideoDataOutput = {
         let output = AVCaptureVideoDataOutput()
         output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String : kCVPixelFormatType_32BGRA]
         return output
     }()
     
-    let session = AVCaptureSession()
+    lazy var metadataOutput: AVCaptureMetadataOutput = {
+        return AVCaptureMetadataOutput()
+    }()
+    
+    lazy let device: AVCaptureDevice = {
+        return AVCaptureDevice.default(for: AVMediaType.video)
+    }()
+
+    let session: AVCaptureSession = {
+        return AVCaptureSession()
+    }()
     var previewLayer: AVCaptureVideoPreviewLayer?
     var stillImageOutput: AVCaptureStillImageOutput
     
-    lazy var detector: WeChatQRCode? = {
-        guard let detector_prototxt_path = Bundle.main.path(forResource: "detector", ofType: "prototxt"),
-        let detector_caffe_model_path = Bundle.main.path(forResource: "detector", ofType: "caffemodel"),
-        let super_resolution_prototxt_path = Bundle.main.path(forResource: "sr", ofType: "prototxt"),
-        let super_resolution_caffe_model_path = Bundle.main.path(forResource: "sr", ofType: "caffemodel") else {
+    lazy var detector: WeChatQRCodeDetector? = {
+        guard let mainBundle = Bundle.main.path(forResource: "WeChatQRScan", ofType: "bundle"),
+              let bundle = Bundle(path: mainBundle + "/opencv_3rdparty"),
+              let detector_prototxt_path = bundle.path(forResource: "detect", ofType: "prototxt"),
+            let detector_caffe_model_path = bundle.path(forResource: "detect", ofType: "caffemodel"),
+            let super_resolution_prototxt_path = bundle.path(forResource: "sr", ofType: "prototxt"),
+            let super_resolution_caffe_model_path = bundle.path(forResource: "sr", ofType: "caffemodel") else {
             assert(false, "本地模型文件丢失")
             return nil
         }
-        return WeChatQRCode.init(detector_prototxt_path: detector_prototxt_path,
+        return WeChatQRCodeDetector(detector_prototxt_path: detector_prototxt_path,
                                  detector_caffe_model_path: detector_caffe_model_path,
                                  super_resolution_prototxt_path: super_resolution_prototxt_path,
                                  super_resolution_caffe_model_path: super_resolution_caffe_model_path)
@@ -44,6 +71,8 @@ public class WeChatScanWrapper: NSObject {
 
     // 当前扫码结果是否处理
     var isNeedScanResult = true
+    
+//    var isNeedScanResult = false
     
     //连续扫码
     var supportContinuous = false
@@ -55,6 +84,13 @@ public class WeChatScanWrapper: NSObject {
         let queue = DispatchQueue(label: "com.WeChatQRScan.ios.queue")
         return queue
     }()
+    
+    
+    
+    private let metadataQueue = DispatchQueue(label: "metadata.session.WeChatScanQR.queue")
+    private let videoDataQueue = DispatchQueue(label: "videoData.session.WeChatScanQR.queue")
+    
+    
     init(videoPreView: UIView,
          objType: [AVMetadataObject.ObjectType] = [(AVMetadataObject.ObjectType.qr as NSString) as AVMetadataObject.ObjectType],
          isCaptureImg: Bool,
@@ -82,13 +118,11 @@ public class WeChatScanWrapper: NSObject {
         if session.canAddInput(input) {
             session.addInput(input)
         }
-
-        if session.canAddOutput(output) {
-            session.addOutput(output)
-        }
-
-        if session.canAddOutput(stillImageOutput) {
-            session.addOutput(stillImageOutput)
+        
+        [output, metadataOutput, stillImageOutput].forEach { [weak session] (output) in
+            if session?.canAddOutput(output) ?? false {
+                session?.addOutput(output)
+            }
         }
         
         stillImageOutput.outputSettings = [AVVideoCodecJPEG: AVVideoCodecKey]
@@ -96,10 +130,10 @@ public class WeChatScanWrapper: NSObject {
         session.sessionPreset = AVCaptureSession.Preset.high
 
         // 参数设置
-        output.setSampleBufferDelegate(self, queue: DispatchQueue.main)
+        output.setSampleBufferDelegate(self, queue: videoDataQueue)
 //        output.metadataObjectTypes = objType
-        
-        
+        metadataOutput.setMetadataObjectsDelegate(self, queue: metadataQueue)
+        metadataOutput.metadataObjectTypes = [.qr]
         //        output.metadataObjectTypes = [AVMetadataObjectTypeQRCode,AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code]
 
         if !cropRect.equalTo(CGRect.zero) {
@@ -247,6 +281,24 @@ public class WeChatScanWrapper: NSObject {
 //        }
         return []
     }
+    public func setTorchActive(isOn: Bool) {
+        assert(Thread.isMainThread)
+        
+        guard let videoDevice = AVCaptureDevice.default(for: .video),
+            videoDevice.hasTorch, videoDevice.isTorchAvailable,
+            (metadataOutputEnable || videoDataOutputEnable) else {
+                return
+        }
+        try? videoDevice.lockForConfiguration()
+        videoDevice.torchMode = isOn ? .on : .off
+        videoDevice.unlockForConfiguration()
+    }
+    
+    deinit {
+        setTorchActive(isOn: false)
+        session.inputs.forEach({ session.removeInput($0) })
+        session.outputs.forEach({ session.removeOutput($0) })
+    }
 }
 
 
@@ -254,7 +306,14 @@ extension WeChatScanWrapper : AVCaptureMetadataOutputObjectsDelegate {
     public func metadataOutput(_ output: AVCaptureMetadataOutput,
                                didOutput metadataObjects: [AVMetadataObject],
                                from connection: AVCaptureConnection) {
-//        captureOutput(output, didOutputMetadataObjects: metadataObjects, from: connection)
+        guard let metadataObject = metadataObjects.first else { return }
+        guard let readableObject = previewLayer?.transformedMetadataObject(for: metadataObject) as? AVMetadataMachineReadableCodeObject, metadataObject.type == .qr else { return }
+        isNeedScanResult = true
+        guard let stringValue = readableObject.stringValue else { return }
+        DispatchQueue.main.async { [weak self] in
+            strongSelf.setTorchActive(isOn: false)
+//            strongSelf.moveImageViews(qrCode: stringValue, corners: readableObject.corners)
+        }
     }
 }
 
@@ -264,42 +323,14 @@ extension WeChatScanWrapper: AVCaptureVideoDataOutputSampleBufferDelegate {
             // 上一帧处理中
             return
         }
+        guard let res = self.detector?.detectAndDecode(img: sampleBuffer) else {
+            isNeedScanResult = true
+            return
+        }
+        res.forEach({ [weak self] in
+            guard let self = self else { return }
+            self.delegate?.WeChatScanWrapper(self, didSuccess: $0)
+        })
         isNeedScanResult = false
-        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
-            return
-        }
-        CVPixelBufferLockBaseAddress(pixelBuffer, CVPixelBufferLockFlags(rawValue: 0))
-        
-        guard let baseAddress = CVPixelBufferGetBaseAddressOfPlane(pixelBuffer, 0) else {
-            return
-        }
-        let bytesPerRow = CVPixelBufferGetBytesPerRowOfPlane(pixelBuffer, 0)
-        let imgWidth = Int32(CVPixelBufferGetWidth(pixelBuffer))
-        let imgHeight = Int32(CVPixelBufferGetHeight(pixelBuffer))
-        let mat = Mat_NewFromBufAddr(imgHeight, imgWidth, CvType.CV_8UC4, baseAddress)
-        /**
-         //    cv::Mat transMat;
-         //    cv::transpose(mat, transMat);
-         //    cv::Mat flipMat;
-         //    cv::flip(transMat, flipMat, 1);
-         //    CVPixelBufferUnlockBaseAddress(imgBuf, 0);
-         //    Mat *flipMatOne;
-         //    std::vector<cv::Mat> points;
-         */
-        var transMat = Mat_New()
-        Mat_Transpose(mat, transMat)
-        var flipMat = Mat_New()
-        Mat_Flip(transMat, flipMat, 1)
-        CVPixelBufferUnlockBaseAddress(pixelBuffer, CVPixelBufferLockFlags(rawValue: 0))
-        
-        let start = CACurrentMediaTime()
-        
-        guard let newFlipMat = flipMat as? opencv2.Mat else {
-            return
-        }
-        var points = [newFlipMat]
-        let res = self.detector?.detectAndDecode(img: newFlipMat, points: &points)
-        
-        print(res)
     }
 }

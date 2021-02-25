@@ -11,6 +11,7 @@
 #endif
 
 #import "OpenCVBridge.h"
+#import "WeChatQRCodeDetector.h"
 #import "WeChatQRScan.h"
 
 FOUNDATION_EXPORT double WeChatQRScanVersionNumber;
