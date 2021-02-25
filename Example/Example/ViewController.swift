@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     }
 
     @objc func start() {
-        let controller = UseAVFoundationPhotoController()
         let controller1 = WeChatQRScanViewController()
         self.navigationController?.pushViewController(controller1, animated: true)
     }

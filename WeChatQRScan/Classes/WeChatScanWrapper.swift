@@ -17,7 +17,7 @@ public struct WeChatQRScanResult {
     var mat: opencv2.Mat?
 }
 
-protocol WeChatScanWrapperDelegate {
+public protocol WeChatScanWrapperDelegate: NSObjectProtocol {
     // Required
     func WeChatScanWrapper(_ wrapper: WeChatScanWrapper, didFailure error: Error)
     func WeChatScanWrapper(_ wrapper: WeChatScanWrapper, didSuccess code: String)
@@ -27,8 +27,8 @@ protocol WeChatScanWrapperDelegate {
 
 public class WeChatScanWrapper: NSObject {
     
-    let delegate: WeChatScanWrapperDelegate?
-    
+    weak open var delegate: WeChatScanWrapperDelegate?
+
     var input: AVCaptureDeviceInput?
     
     lazy var output: AVCaptureVideoDataOutput = {
@@ -41,9 +41,7 @@ public class WeChatScanWrapper: NSObject {
         return AVCaptureMetadataOutput()
     }()
     
-    lazy let device: AVCaptureDevice = {
-        return AVCaptureDevice.default(for: AVMediaType.video)
-    }()
+    let device = AVCaptureDevice.default(for: AVMediaType.video)
 
     let session: AVCaptureSession = {
         return AVCaptureSession()
@@ -61,10 +59,12 @@ public class WeChatScanWrapper: NSObject {
             assert(false, "本地模型文件丢失")
             return nil
         }
-        return WeChatQRCodeDetector(detector_prototxt_path: detector_prototxt_path,
-                                 detector_caffe_model_path: detector_caffe_model_path,
-                                 super_resolution_prototxt_path: super_resolution_prototxt_path,
-                                 super_resolution_caffe_model_path: super_resolution_caffe_model_path)
+        let detector = WeChatQRCodeDetector(detector_prototxt_path: detector_prototxt_path,
+                                    detector_caffe_model_path: detector_caffe_model_path,
+                                    super_resolution_prototxt_path: super_resolution_prototxt_path,
+                                    super_resolution_caffe_model_path: super_resolution_caffe_model_path)
+        detector.delegate = self
+        return detector
     }()
     // 是否需要拍照
     var isNeedCaptureImage: Bool
@@ -286,7 +286,7 @@ public class WeChatScanWrapper: NSObject {
         
         guard let videoDevice = AVCaptureDevice.default(for: .video),
             videoDevice.hasTorch, videoDevice.isTorchAvailable,
-            (metadataOutputEnable || videoDataOutputEnable) else {
+            isNeedScanResult else {
                 return
         }
         try? videoDevice.lockForConfiguration()
@@ -311,7 +311,7 @@ extension WeChatScanWrapper : AVCaptureMetadataOutputObjectsDelegate {
         isNeedScanResult = true
         guard let stringValue = readableObject.stringValue else { return }
         DispatchQueue.main.async { [weak self] in
-            strongSelf.setTorchActive(isOn: false)
+//            strongSelf.setTorchActive(isOn: false)
 //            strongSelf.moveImageViews(qrCode: stringValue, corners: readableObject.corners)
         }
     }
@@ -323,14 +323,16 @@ extension WeChatScanWrapper: AVCaptureVideoDataOutputSampleBufferDelegate {
             // 上一帧处理中
             return
         }
-        guard let res = self.detector?.detectAndDecode(img: sampleBuffer) else {
-            isNeedScanResult = true
-            return
-        }
-        res.forEach({ [weak self] in
-            guard let self = self else { return }
-            self.delegate?.WeChatScanWrapper(self, didSuccess: $0)
-        })
+        self.detector?.send(sampleBuffer)
+    }
+}
+
+extension WeChatScanWrapper: WeChatQRCodeDetectorDelegate {
+    public func weChatQRCodeDetector(_ results: [WeChatQRCodeResult], sampleBuffer: CMSampleBuffer?) {
         isNeedScanResult = false
+        results.forEach({ [weak self] in
+            guard let self = self else { return }
+            self.delegate?.WeChatScanWrapper(self, didSuccess: $0.content)
+        })
     }
 }

@@ -56,13 +56,28 @@ extension WeChatQRScanViewController {
                                  AVMetadataObject.ObjectType.code128 as NSString] as [AVMetadataObject.ObjectType]
             }
             
-            scanWrapper = WeChatScanWrapper(videoPreView: view,
+            scanWrapper = WeChatQRScan.WeChatScanWrapper(videoPreView: view,
                                             objType: arrayCodeType!, isCaptureImg: isNeedCodeImage, cropRect: view.frame)
         }
         
         scanWrapper?.supportContinuous = isSupportContinuous
         
         scanWrapper?.start()
+    }
+}
+
+extension WeChatQRScanViewController: WeChatScanWrapperDelegate {
+    public func WeChatScanWrapper(_ wrapper: WeChatScanWrapper, didFailure error: Error) {
+        
+    }
+    
+    public func WeChatScanWrapper(_ wrapper: WeChatScanWrapper, didChangeTorchActive isOn: Bool) {
+        
+    }
+    
+    public func WeChatScanWrapper(_ wrapper: WeChatScanWrapper, didSuccess code: String) {
+        let controller = UIAlertController(title: "QRCode msg", message: code, preferredStyle: UIAlertController.Style.alert)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 

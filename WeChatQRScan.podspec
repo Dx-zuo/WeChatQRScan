@@ -25,19 +25,9 @@ TODO: Add long description of the pod here.
   s.ios.framework  = 'Foundation'
   s.module_name = 'WeChatQRScan'
   s.header_dir = 'WeChatQRScan'
-  s.libraries = [
-   'c++'
-  ]
+  s.libraries    = 'c++', 'stdc++'
   
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES'
   }
-  s.compiler_flags = [
-#      '-fno-omit-frame-pointer',
-#      '-fexceptions',
-#      '-Wall',
-#      '-Werror',
-      '-std=c++1y',
-#      '-fPIC'
-  ]
 end

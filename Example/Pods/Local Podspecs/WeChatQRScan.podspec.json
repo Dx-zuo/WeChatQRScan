@@ -32,12 +32,10 @@
   "module_name": "WeChatQRScan",
   "header_dir": "WeChatQRScan",
   "libraries": [
-    "c++"
+    "c++",
+    "stdc++"
   ],
   "pod_target_xcconfig": {
     "DEFINES_MODULE": "YES"
-  },
-  "compiler_flags": [
-    "-std=c++1y"
-  ]
+  }
 }
